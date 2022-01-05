@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>General.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #f97bb0; font-weight: bold;}
+.s1 { color: #dfdfe0;}
+</style>
+</head>
+<body bgcolor="#292a30">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+General.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">controller;</span>
+
+<span class="s0">import </span><span class="s1">model.product.Product;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList;</span>
+
+<span class="s0">public interface </span><span class="s1">General&lt;B&gt; {</span>
+    <span class="s1">ArrayList&lt;Product&gt; searchProductById(String id);</span>
+
+    <span class="s0">void </span><span class="s1">add(B b);</span>
+
+    <span class="s0">void </span><span class="s1">edit(</span><span class="s0">int </span><span class="s1">index, B b);</span>
+
+    <span class="s0">void </span><span class="s1">remote(</span><span class="s0">int </span><span class="s1">index);</span>
+
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

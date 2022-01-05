@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>PersonManager.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #f97bb0; font-weight: bold;}
+.s1 { color: #dfdfe0;}
+.s2 { color: #ff806c;}
+</style>
+</head>
+<body bgcolor="#292a30">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PersonManager.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">controller;</span>
+<span class="s0">import </span><span class="s1">model.person.Person;</span>
+<span class="s0">import </span><span class="s1">model.product.Product;</span>
+
+<span class="s0">import </span><span class="s1">java.io.*;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList;</span>
+
+<span class="s0">import static </span><span class="s1">view.Constant.PERSON_DATA;</span>
+
+<span class="s0">public class </span><span class="s1">PersonManager </span><span class="s0">implements </span><span class="s1">General&lt;Person&gt; {</span>
+    <span class="s0">private </span><span class="s1">ArrayList&lt;Person&gt; people = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;();</span>
+
+    <span class="s0">public </span><span class="s1">ArrayList&lt;Person&gt; getPeople() {</span>
+        <span class="s0">return </span><span class="s1">people;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">setPeople(ArrayList&lt;Person&gt; people) {</span>
+        <span class="s0">this</span><span class="s1">.people = people;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public </span><span class="s1">ArrayList&lt;Person&gt; searchProductByName(String nameRemove) {</span>
+        <span class="s1">ArrayList&lt;Person&gt; peopleList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;();</span>
+        <span class="s0">for </span><span class="s1">(Person person : people) {</span>
+            <span class="s1">String name = person.getAccount().getName();</span>
+            <span class="s0">if </span><span class="s1">(name.equals(nameRemove)) {</span>
+                <span class="s1">peopleList.add(person);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">peopleList;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">ArrayList&lt;Product&gt; searchProductById(String id) {</span>
+        <span class="s0">return null</span><span class="s1">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">add(Person person) {</span>
+        <span class="s1">people.add(person);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">edit(</span><span class="s0">int </span><span class="s1">index, Person person) {</span>
+
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">remote(</span><span class="s0">int </span><span class="s1">index) {</span>
+        <span class="s1">people.remove(index);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">save() {</span>
+        <span class="s0">try </span><span class="s1">{</span>
+            <span class="s1">FileOutputStream fileOutputStream = </span><span class="s0">new </span><span class="s1">FileOutputStream(PERSON_DATA);</span>
+            <span class="s1">ObjectOutputStream objectOutputStream = </span><span class="s0">new </span><span class="s1">ObjectOutputStream(fileOutputStream);</span>
+            <span class="s1">objectOutputStream.writeObject(people);</span>
+            <span class="s1">objectOutputStream.close();</span>
+            <span class="s1">fileOutputStream.close();</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(FileNotFoundException e) {</span>
+            <span class="s1">e.printStackTrace();</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(IOException e) {</span>
+            <span class="s1">e.printStackTrace();</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">read() {</span>
+        <span class="s0">try </span><span class="s1">{</span>
+            <span class="s1">FileInputStream fileInputStream = </span><span class="s0">new </span><span class="s1">FileInputStream(PERSON_DATA);</span>
+            <span class="s1">ObjectInputStream objectInputStream = </span><span class="s0">new </span><span class="s1">ObjectInputStream(fileInputStream);</span>
+            <span class="s1">people = (ArrayList&lt;Person&gt;) objectInputStream.readObject();</span>
+            <span class="s1">objectInputStream.close();</span>
+            <span class="s1">fileInputStream.close();</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(FileNotFoundException e) {</span>
+            <span class="s1">e.printStackTrace();</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(IOException e) {</span>
+            <span class="s1">System.err.println(</span><span class="s2">&quot;Không có dữ liệu&quot;</span><span class="s1">);</span>
+            <span class="s1">people = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;();</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(ClassNotFoundException e) {</span>
+            <span class="s1">e.printStackTrace();</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
