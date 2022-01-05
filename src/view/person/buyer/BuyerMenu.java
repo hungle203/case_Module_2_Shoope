@@ -15,25 +15,22 @@ import static view.Constant.KITCHEN_TOOLS;
 public class BuyerMenu {
 
     public static void run(Buyer buyer) {
-        int choose = -1;
+        int choose;
         do {
             menu();
             choose = Error.inputMismatchError();
-            Error.selectionInputError(choose, 1, 6);
+            Error.selectionInputError(choose, 1, 5);
             switch (choose) {
                 case 1:
-                    showProductTop(buyer);
-                    break;
-                case 2:
                     showCategory(buyer);
                     break;
-                case 3:
+                case 2:
                     showPriceIncrease(buyer);
                     break;
-                case 4:
+                case 3:
                     showPriceReduce(buyer);
                     break;
-                case 5:
+                case 4:
                     viewCart(buyer);
                     break;
                 case 7:
@@ -42,7 +39,7 @@ public class BuyerMenu {
                     }
                     break;
             }
-        } while (choose != 6);
+        } while (choose != 5);
     }
 
     private static void viewCart(Buyer buyer) {
@@ -77,11 +74,6 @@ public class BuyerMenu {
 
     private static void showPriceIncrease(Buyer buyer) {
         products.sortPriceIncrease();
-        showProduct(products.getProducts(), buyer);
-    }
-
-    private static void showProductTop(Buyer buyer) {
-        products.sortCountReduce();
         showProduct(products.getProducts(), buyer);
     }
 
@@ -235,12 +227,11 @@ public class BuyerMenu {
 
     public static void menu() {
         System.out.println("MENU MUA HÀNG");
-        System.out.println("1. Xem sản phẩm bán chạy");
-        System.out.println("2. Xem sản phẩm theo danh mục");
-        System.out.println("3. Xem sản phẩm theo giá tăng dần");
-        System.out.println("4. Xem sản phẩm theo giá giảm dần");
-        System.out.println("5. Xem giỏ hàng");
-        System.out.println("6. Thoát");
+        System.out.println("1. Xem sản phẩm theo danh mục");
+        System.out.println("2. Xem sản phẩm theo giá tăng dần");
+        System.out.println("3. Xem sản phẩm theo giá giảm dần");
+        System.out.println("4. Xem giỏ hàng");
+        System.out.println("5. Thoát");
         System.out.println("Nhập lựa chọn");
     }
 

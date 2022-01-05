@@ -22,8 +22,6 @@ public class Constant {
 
     public static final String SELLER = "seller";
 
-    public static final String STAFF = "staff";
-
     public static final String END = "--------------------------------------------------------";
 
     public static PersonManagement people = new PersonManagement();

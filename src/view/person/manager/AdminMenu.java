@@ -1,12 +1,10 @@
 package view.person.manager;
 
-import model.account.Account;
 import model.person.Manage;
 import model.person.Person;
 import model.person.Seller;
 import model.product.Product;
 import view.error.Error;
-import view.log_in_and_register.register.Register;
 
 import java.util.Iterator;
 
@@ -22,15 +20,9 @@ public class AdminMenu {
             Error.selectionInputError(choose, 1, 6);
             switch (choose) {
                 case 1:
-                    addStaff();
-                    break;
-                case 2:
-                    removeStaff();
-                    break;
-                case 3:
                     showSellerRegister();
                     break;
-                case 4:
+                case 2:
                     addSeller();
                     break;
                 case 5:
@@ -104,47 +96,13 @@ public class AdminMenu {
         System.out.println(END);
     }
 
-
-    public static void removeStaff() {
-        System.out.println("Nhập tên nhân viên");
-        String nameRemove = scanner.nextLine();
-        int index = people.searchPersonByName(nameRemove);
-        if (index == -1) {
-            System.err.println("Không có tên nhân viên này");
-            System.out.println(END);
-            return;
-        }
-        people.remove(index);
-        System.out.println("Đã xóa.");
-        System.out.println(END);
-    }
-
-    public static void addStaff() {
-        Manage staff = inputManage();
-        if (Register.checkAccount(staff)) return;
-        people.add(staff);
-        System.out.println("Đã thêm " + staff.getAccount().getName() + " vào hệ thống");
-        System.out.println(END);
-    }
-
-    public static Manage inputManage() {
-        System.out.println("Nhập tên tài khoản");
-        String name = scanner.nextLine();
-        System.out.println("Nhập mật khẩu");
-        String password = scanner.nextLine();
-        return new Manage(new Account(name, password), ADMIN, STAFF);
-    }
-
     public static void menuAdmin() {
         System.out.println("------------Quản trị viên----------");
-        System.out.println("1. Thêm nhân viên");
-        System.out.println("2. Xóa nhân viên");
-        System.out.println("3. Hiển thị người đăng ký bán hàng trên hệ thống");
-        System.out.println("4. Thêm người bán hàng");
-        System.out.println("5. Xóa người bán hàng");
+        System.out.println("1. Hiển thị người đăng ký bán hàng trên hệ thống");
+        System.out.println("2. Thêm người bán hàng");
+        System.out.println("3. Xóa người bán hàng");
         System.out.println("6. Thoát");
         System.out.println("Nhập lựa chọn");
-        System.out.println("");
     }
 
 }

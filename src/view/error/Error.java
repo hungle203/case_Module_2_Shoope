@@ -23,7 +23,7 @@ public class Error {
     }
 
     public static boolean styleNumberPhoneError(String phoneNumber) {
-        String regex = "^[0-9]+$";
+        String regex = "^[0]{1}+[235789]{1}+\\d{8}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phoneNumber);
 
@@ -32,7 +32,7 @@ public class Error {
                 throw new InputMismatchException();
             }
         } catch (InputMismatchException e) {
-            System.err.println("Sai định dạng số điện thoại");
+            System.err.println("SỐ ĐIỆN THOẠI KHÔNG HỢP LỆ\nSố điện thoại phải bắt đầu bằng số 0 và có 10 số");
             return false;
         }
         return true;
