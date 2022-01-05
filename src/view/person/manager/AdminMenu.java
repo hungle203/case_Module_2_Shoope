@@ -3,10 +3,7 @@ package view.person.manager;
 import model.person.Manage;
 import model.person.Person;
 import model.person.Seller;
-import model.product.Product;
 import view.error.Error;
-
-import java.util.Iterator;
 
 import static view.Constant.*;
 
@@ -25,7 +22,7 @@ public class AdminMenu {
                 case 2:
                     addSeller();
                     break;
-                case 5:
+                case 3:
                     removeSeller();
                     break;
             }
@@ -42,13 +39,7 @@ public class AdminMenu {
             return;
         }
         Person person = people.getPeople().get(index);
-        Iterator<Product> productIterator = products.getProducts().iterator();
-        while (productIterator.hasNext()) {
-            Product product = productIterator.next();
-            if (product.getSeller().getAccount().equals(person.getAccount())) {
-                productIterator.remove();
-            }
-        }
+        products.getProducts().removeIf(product -> product.getSeller().getAccount().equals(person.getAccount()));
         people.remove(index);
         System.out.println("Đã xóa.");
         System.out.println(END);

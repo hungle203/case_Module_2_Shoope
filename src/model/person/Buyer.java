@@ -11,7 +11,6 @@ public class Buyer extends Person {
     private String phone;
     private String address;
     private ArrayList<Product> cart;
-    private int point;
     private ArrayList<Bill> bills;
 
 
@@ -19,7 +18,6 @@ public class Buyer extends Person {
         super(account, role);
         this.phone = phone;
         this.address = address;
-        point = 0;
         cart = new ArrayList<>();
         bills = new ArrayList<>();
     }
@@ -48,13 +46,6 @@ public class Buyer extends Person {
         this.cart = cart;
     }
 
-    public int getPoint() {
-        return point;
-    }
-
-    public void setPoint(int point) {
-        this.point = point;
-    }
 
     public ArrayList<Bill> getBills() {
         return bills;
