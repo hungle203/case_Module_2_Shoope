@@ -11,7 +11,7 @@ public class RegisterBuyer {
         int choose;
         Buyer buyer = inputBuyer();
         if (Register.checkAccount(buyer)) return;
-        System.out.println("Kiểm tra lại thông tin tài khoản");
+        System.out.println("[\uD83D\uDD14]"+ "Kiểm tra lại thông tin tài khoản");
         System.out.println(buyer);
         menu();
         choose = Error.inputMismatchError();
@@ -29,27 +29,27 @@ public class RegisterBuyer {
     }
 
     public static Buyer inputBuyer() {
-        System.out.println("Nhập tên tài khoản");
+        System.out.println(".>Nhập tên tài khoản");
         String name = scanner.nextLine();
-        System.out.println("Nhập mật khẩu");
+        System.out.println(".>Nhập mật khẩu");
         String password = scanner.nextLine();
         boolean checkPhoneNumber;
         String phoneNumber = "";
         do {
-            System.out.println("Nhập số điện thoại");
+            System.out.println(".>Nhập số điện thoại");
             phoneNumber = scanner.nextLine();
             checkPhoneNumber = Error.styleNumberPhoneError(phoneNumber);
         } while (!checkPhoneNumber);
-        System.out.println("Nhập địa chỉ");
+        System.out.println(".>Nhập địa chỉ");
         String address = scanner.nextLine();
         Account account = new Account(name, password);
         return new Buyer(account, BUYER, phoneNumber, address);
     }
 
     public static void menu() {
-        System.out.println("1. Đồng ý");
-        System.out.println("2. Nhập lại");
-        System.out.println("3. Hủy");
+        System.out.println("[1. Đồng ý   ]");
+        System.out.println("[2. Nhập lại ]");
+        System.out.println("[3. Hủy      ]");
     }
 
 }

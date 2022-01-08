@@ -96,7 +96,7 @@ public class Product implements Serializable {
         for (String comment : comments) {
             stringBuilder.append("   " + comment + "\n");
         }
-        return "_____Product_____" +
+        return  "[_____Giỏ Hàng_____" +
                 "Id: " + id + "\n" +
                 "Tên sản phẩm: " + name + "\n" +
                 "Giá sản phẩm: " + price + "\n" +

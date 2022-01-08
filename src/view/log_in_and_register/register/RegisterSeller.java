@@ -10,7 +10,7 @@ public class RegisterSeller {
         int choose;
         Seller seller = inputBuyer();
         if (Register.checkAccount(seller)) return;
-        System.out.println("Kiểm tra lại thông tin tài khoản");
+        System.out.println("[\uD83D\uDD14]"+ "[Kiểm tra lại thông tin tài khoản]");
         System.out.println(seller);
         do {
             menu();
@@ -18,7 +18,7 @@ public class RegisterSeller {
             Error.selectionInputError(choose, 1, 3);
             switch (choose) {
                 case 1:
-                    System.out.println("Tài khoản sẽ được Admin kiểm định lại thông tin " + "\n" + " thời gian phê duyệt có thể là 2 ngày");
+                    System.out.println("[\uD83D\uDD14]"+ "Tài khoản sẽ được Admin kiểm định lại thông tin " + "\n" + " thời gian phê duyệt có thể là 2 ngày");
                     people.add(seller);
                     break;
                 case 2:
@@ -29,28 +29,28 @@ public class RegisterSeller {
     }
 
     public static Seller inputBuyer() {
-        System.out.println("Nhập tên tài khoản");
+        System.out.println(".>Nhập tên tài khoản");
         String name = scanner.nextLine();
-        System.out.println("Nhập mật khẩu");
+        System.out.println(".>Nhập mật khẩu");
         String password = scanner.nextLine();
-        System.out.println("Nhập mã số giấy phép kinh doanh");
+        System.out.println(".>Nhập mã số giấy phép kinh doanh");
         String license = scanner.nextLine();
         boolean checkPhoneNumber;
         String phoneNumber = "";
         do {
-            System.out.println("Nhập số điện thoại");
+            System.out.println(".>Nhập số điện thoại");
             phoneNumber = scanner.nextLine();
             checkPhoneNumber = Error.styleNumberPhoneError(phoneNumber);
         } while (!checkPhoneNumber);
-        System.out.println("Nhập địa chỉ");
+        System.out.println(".>Nhập địa chỉ");
         String address = scanner.nextLine();
         Account account = new Account(name, password);
         return new Seller(account, SELLER, license, phoneNumber, address);
     }
 
     public static void menu() {
-        System.out.println("1. Đồng ý");
-        System.out.println("2. Nhập lại");
-        System.out.println("3. Hủy");
+        System.out.println("[1. Đồng ý  ]");
+        System.out.println("[2. Nhập lại]");
+        System.out.println("[3. Hủy     ]");
     }
 }

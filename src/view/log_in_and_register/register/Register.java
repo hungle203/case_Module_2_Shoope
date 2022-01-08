@@ -25,7 +25,7 @@ public class Register {
     public static boolean checkAccount(Person person) {
         boolean checkAccount = AccountCheckRegister.checkAccountRegister(person.getAccount());
         if (checkAccount) {
-            System.err.println("Tên tài khoản này đã tồn tại, hãy nhập lại");
+            System.err.println("[\uD83D\uDD14]"+ "Tên tài khoản này đã tồn tại, hãy nhập lại");
             System.out.println(END);
             return true;
         }
@@ -33,10 +33,11 @@ public class Register {
     }
 
     public static void menu() {
-        System.out.println("------------ĐĂNG KÝ------------");
-        System.out.println("1. Đăng ký người mua hàng");
-        System.out.println("2. Đăng ký người bán hàng");
-        System.out.println("3. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[------------ĐĂNG KÝ------------]");
+        System.out.println("[1. Đăng ký người mua hàng      ]");
+        System.out.println("[2. Đăng ký người bán hàng      ]");
+        System.out.println("[3. Thoát                       ]");
+        System.out.println("[-------------------------------]");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
     }
 }

@@ -24,7 +24,7 @@ public class BillOrderMenu {
         Iterator<Product> productIterator = products.iterator();
         ArrayList<Product> products1 = get5Product(count, productIterator);
         if (products1.size() == 0) {
-            System.out.println("Giỏ hàng của bạn không có sản phẩm nào.");
+            System.out.println("[\uD83D\uDD14]"+ "Giỏ hàng của bạn không có sản phẩm nào.");
         } else {
             int choose;
             menuShow5Product(products1);
@@ -40,7 +40,7 @@ public class BillOrderMenu {
                     case 0:
                         products1 = get5Product(count, productIterator);
                         if (products1.size() == 0) {
-                            System.out.println("Không còn sản phẩm nào.");
+                            System.out.println("[\uD83D\uDD14]"+ "Không còn sản phẩm nào.");
                             return;
                         }
                         menuShow5Product(products1);
@@ -100,14 +100,14 @@ public class BillOrderMenu {
     }
 
     public static void menuShow5Product(ArrayList<Product> products1) {
-        System.out.println("-----------Sản phẩm-----------");
-        System.out.println("0. Xem tiếp");
+        System.out.println("[-----------Sản phẩm-----------]");
+        System.out.println("[0. Xem tiếp                   ]");
         int count = 1;
         for (Product product : products1) {
-            System.out.println(count + ". " + product);
+            System.out.println("👉" + count + ". " + product);
             count++;
         }
-        System.out.println("Nhập lựa chọn sản phẩm");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Hãy lựa chọn sản phẩm");
     }
 
 }

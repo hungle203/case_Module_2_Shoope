@@ -16,7 +16,7 @@ public class Error {
                 throw new InputMismatchException();
             }
         } catch (InputMismatchException e) {
-            System.err.println("Không có lựa chọn này.");
+            System.err.println("🔔"+ "Không có lựa chọn này.");
             return false;
         }
         return true;
@@ -32,7 +32,7 @@ public class Error {
                 throw new InputMismatchException();
             }
         } catch (InputMismatchException e) {
-            System.err.println("SỐ ĐIỆN THOẠI KHÔNG HỢP LỆ\nSố điện thoại phải bắt đầu bằng số 0 và có 10 số");
+            System.err.println("[\uD83D\uDD14]" + "SỐ ĐIỆN THOẠI KHÔNG HỢP LỆ\nSố điện thoại phải bắt đầu bằng số 0 và có 10 số");
             return false;
         }
         return true;
@@ -43,7 +43,7 @@ public class Error {
         try {
             number = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.err.println("Nhập sai định dạng số.");
+            System.err.println("[\uD83D\uDD14]" + "Nhập sai định dạng số.");
         }
         scanner.nextLine();
         return number;

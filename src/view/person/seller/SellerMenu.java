@@ -41,9 +41,9 @@ public class SellerMenu {
     public static void showProduct(ArrayList<Product> products) {
         int count = 5;
         Iterator<Product> productIterator = products.iterator();
-        ArrayList<Product> products1 = get5Product(count, productIterator);
+        ArrayList<Product> products1 = get5Product(count , productIterator);
         if (products1.size() == 0) {
-            System.out.println("Gian hàng của bạn không có sản phẩm nào.");
+            System.out.println("[\uD83D\uDD14]" + "[Gian hàng của bạn không có sản phẩm nào]");
         } else {
             int choose;
             menuShow5Product(products1);
@@ -59,7 +59,7 @@ public class SellerMenu {
                     case 0:
                         products1 = get5Product(count, productIterator);
                         if (products1.size() == 0) {
-                            System.out.println("Không còn sản phẩm nào.");
+                            System.out.println("[\uD83D\uDD14]" + "[Không còn sản phẩm nào]");
                             return;
                         }
                         menuShow5Product(products1);
@@ -108,15 +108,14 @@ public class SellerMenu {
         return productsStore;
     }
 
-
     public static void menu() {
-        System.out.println("-----------MENU BÁN HÀNG-----------");
-        System.out.println("1. Thêm sản phẩm");
-        System.out.println("2. Hiển thị tất cả sản phẩm trong shop");
-        System.out.println("3. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[-----------MENU BÁN HÀNG------------- ]");
+        System.out.println("[1. Thêm sản phẩm                      ]");
+        System.out.println("[2. Hiển thị tất cả sản phẩm trong shop]");
+        System.out.println("[3. Thoát                              ]");
+        System.out.println("[--------------------------------------]");
+        System.out.println("[\uD83D\uDCDD]" + ".>Nhập lựa chọn     ]");
     }
-
 
     private static void editAndRemoveProduct(Product product) {
         int choose;
@@ -138,6 +137,7 @@ public class SellerMenu {
     public static void removeProduct(Product product) {
         products.remove(product);
         productStore.remove(product);
+        System.out.println("[\uD83D\uDCDD]" + "[Xóa thành công]");
     }
 
     private static ArrayList<Product> get5Product(int count, Iterator<Product> productIterator) {
@@ -156,21 +156,22 @@ public class SellerMenu {
 
 
     public static void menuEditAndRemoveProduct() {
-        System.out.println("1. Sửa sản phẩm");
-        System.out.println("2. Xóa sản phẩm");
-        System.out.println("3. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[1. Sửa sản phẩm]");
+        System.out.println("[2. Xóa sản phẩm]");
+        System.out.println("[3. Thoát       ]");
+        System.out.println("[\uD83D\uDCDD]" + ".>Nhập lựa chọn");
     }
 
     public static void menuShow5Product(ArrayList<Product> products1) {
         System.out.println("-----------Sản phẩm-----------");
         int count = 2;
         for (Product product : products1) {
-            System.out.println(count + ". " + product);
+            System.out.println("[\uD83D\uDC49]" + count + ". " + product);
             count++;
         }
-        System.out.println("Nhập lựa chọn sản phẩm");
-        System.out.println("0. Xem tiếp");
-        System.out.println("1. Thoát");
+        System.out.println("[\uD83D\uDCDD]" + "[Nhập lựa chọn sản phẩm");
+        System.out.println("[0. Xem tiếp]");
+        System.out.println("[1. Thoát   ]");
     }
+
 }

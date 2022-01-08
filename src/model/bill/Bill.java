@@ -113,7 +113,7 @@ public class Bill implements Serializable {
                 "Người bán: " + seller.getAccount().getName() + "\n" +
                 "Người mua: " + buyer.getAccount().getName() + "\n" +
                 "Số lượng: " + quantity + "\n" +
-                "Số thanh toán: " + money + "\n" +
+                "Số tiền phải thanh toán: " + money + "\n" +
                 "Ngày tạo: " + dateCreated.toString() + "\n" +
                 "Ngày thanh toán: " + ((dateOfPayment == null) ? "trống" : dateOfPayment.toString()) + "\n" +
                 "Tình trạng thanh toán: " + status + "\n" +

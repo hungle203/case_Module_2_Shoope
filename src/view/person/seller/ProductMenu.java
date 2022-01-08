@@ -15,8 +15,8 @@ public class ProductMenu {
         product.setName(name);
         product.setPrice(price);
         product.setDescription(description);
+        System.out.println("[\uD83D\uDD14]" + "[sửa thành công].");
     }
-
 
     public static Product inputProduct(Seller seller) {
         String[] informationProduct = inputInformation();
@@ -29,23 +29,23 @@ public class ProductMenu {
 
     private static String[] inputInformation() {
         String[] productInformation = new String[3];
-        System.out.println("Nhập tên sản phẩm");
+        System.out.println(".>Nhập tên sản phẩm");
         String name = scanner.nextLine();
         productInformation[0] = name;
 
-        System.out.println("Nhập giá sản phẩm");
+        System.out.println(".>Nhập giá sản phẩm");
         double price = scanner.nextDouble();
         productInformation[1] = String.valueOf(price);
         scanner.nextLine();
 
-        System.out.println("Nhập mô tả sản phẩm");
+        System.out.println(".>Nhập mô tả sản phẩm");
         String description = scanner.nextLine();
         productInformation[2] = description;
         return productInformation;
     }
 
     public static String inputCategory() {
-        System.out.println("Nhập danh mục sản phẩm");
+        System.out.println(".>Nhập danh mục sản phẩm");
         String category = null;
         int choose;
         do {
@@ -75,13 +75,13 @@ public class ProductMenu {
     }
 
     public static void menuCategory() {
-        System.out.println("------------DANH MỤC SẢN PHẨM------------");
-        System.out.println("1. Điện thoại, Laptop, Tablet");
-        System.out.println("2. Tivi, Loa, Dàn Karaoke");
-        System.out.println("3. Máy lạnh, Quạt điều hòa");
-        System.out.println("4. Máy giặt, Sấy quần áo");
-        System.out.println("5. Đồ dùng nhà bếp");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[------------DANH MỤC SẢN PHẨM------------]");
+        System.out.println("[1. Điện thoại, Laptop, Tablet            ]");
+        System.out.println("[2. Tivi, Loa, Dàn Karaoke                ]");
+        System.out.println("[3. Máy lạnh, Quạt điều hòa               ]");
+        System.out.println("[4. Máy giặt, Sấy quần áo                 ]");
+        System.out.println("[5. Đồ dùng nhà bếp                       ]");
+        System.out.println("[-----------------------------------------]");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
     }
-
 }

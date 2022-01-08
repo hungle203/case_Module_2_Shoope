@@ -33,7 +33,7 @@ public class BuyerMenu {
                 case 4:
                     viewCart(buyer);
                     break;
-                case 7:
+                case 6:
                     for (Product product : buyer.getCart()) {
                         System.out.println(product);
                     }
@@ -61,10 +61,10 @@ public class BuyerMenu {
     }
 
     private static void menuViewCart() {
-        System.out.println("1. Hiển thị toàn bộ giỏ hàng");
-        System.out.println("2. Hiển thị hóa đơn");
-        System.out.println("3. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[1. Hiển thị toàn bộ giỏ hàng]");
+        System.out.println("[2. Hiển thị hóa đơn         ]");
+        System.out.println("[3. Thoát                    ] ");
+        System.out.println("[\uD83D\uDCDD]"+ "[Nhập lựa chọn]");
     }
 
     private static void showPriceReduce(Buyer buyer) {
@@ -85,7 +85,7 @@ public class BuyerMenu {
 
 
     public static String inputCategory() {
-        System.out.println("Nhập danh mục sản phẩm");
+        System.out.println("[\uD83D\uDD14]"+ "[Nhập danh mục sản phẩm]");
         String category = null;
         int choose;
         do {
@@ -126,12 +126,12 @@ public class BuyerMenu {
 
     public static void menuCategory() {
         System.out.println("------------DANH MỤC SẢN PHẨM------------");
-        System.out.println("1. Điện thoại, Laptop, Tablet");
-        System.out.println("2. Tivi, Loa, Dàn Karaoke");
-        System.out.println("3. Máy lạnh, Quạt điều hòa");
-        System.out.println("4. Máy giặt, Sấy quần áo");
-        System.out.println("5. Đồ dùng nhà bếp");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[1. Điện thoại, Laptop, Tablet]");
+        System.out.println("[2. Tivi, Loa, Dàn Karaoke    ]");
+        System.out.println("[3. Máy lạnh, Quạt điều hòa   ] " );
+        System.out.println("[4. Máy giặt, Sấy quần áo     ]");
+        System.out.println("[5. Đồ dùng nhà bếp           ] ");
+        System.out.println("[\uD83D\uDCDD]"+ "Nhập lựa chọn");
     }
 
     public static void showProduct(ArrayList<Product> products, Buyer buyer) {
@@ -139,7 +139,7 @@ public class BuyerMenu {
         Iterator<Product> productIterator = products.iterator();
         ArrayList<Product> products1 = get5Product(count, productIterator);
         if (products1.size() == 0) {
-            System.out.println("Gian hàng không có sản phẩm nào.");
+            System.out.println("[\uD83D\uDD14]"+ "[Gian hàng không có sản phẩm nào]");
         } else {
             int choose;
             menuShow5Product(products1);
@@ -155,7 +155,7 @@ public class BuyerMenu {
                     case 0:
                         products1 = get5Product(count, productIterator);
                         if (products1.size() == 0) {
-                            System.out.println("Không còn sản phẩm nào.");
+                            System.out.println("[\uD83D\uDD14]"+ "[Không còn sản phẩm nào]");
                             return;
                         }
                         menuShow5Product(products1);
@@ -195,7 +195,7 @@ public class BuyerMenu {
 
     private static void addToCart(Product product, Buyer buyer) {
         buyer.getCart().add(product);
-        System.out.println("Đã thêm vào giỏ hàng");
+        System.out.println("[\uD83D\uDD14]"+ "[Đã thêm vào giỏ hàng]");
         System.out.println("--------------------");
     }
 
@@ -215,24 +215,24 @@ public class BuyerMenu {
 
     public static void menuShow5Product(ArrayList<Product> products1) {
         System.out.println("-----------Sản phẩm-----------");
-        System.out.println("0. Xem tiếp");
-        System.out.println("1. Thoát.");
+        System.out.println("[0. Xem tiếp]");
+        System.out.println("[1. Thoát   ]");
         int count = 2;
         for (Product product : products1) {
             System.out.println(count + ". " + product);
             count++;
         }
-        System.out.println("Nhập lựa chọn sản phẩm");
+        System.out.println("[\uD83D\uDCDD]"+ "[Nhập lựa chọn sản phẩm]");
     }
 
     public static void menu() {
-        System.out.println("MENU MUA HÀNG");
-        System.out.println("1. Xem sản phẩm theo danh mục");
-        System.out.println("2. Xem sản phẩm theo giá tăng dần");
-        System.out.println("3. Xem sản phẩm theo giá giảm dần");
-        System.out.println("4. Xem giỏ hàng");
-        System.out.println("5. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[----------MENU MUA HÀNG----------]");
+        System.out.println("[1. Xem sản phẩm theo danh mục    ]");
+        System.out.println("[2. Xem sản phẩm theo giá tăng dần]");
+        System.out.println("[3. Xem sản phẩm theo giá giảm dần]");
+        System.out.println("[4. Xem giỏ hàng                  ]");
+        System.out.println("[5. Thoát                         ]");
+        System.out.println("[\uD83D\uDCDD]"+ "[Nhập lựa chọn  ]");
     }
 
 }

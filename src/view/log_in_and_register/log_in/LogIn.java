@@ -16,7 +16,7 @@ public class LogIn {
         Account account = inputAccount();
         Person person = checkAccount(account);
         if (person == null) {
-            System.err.println("Thông tin tài khoản không chính xác.");
+            System.err.println("[\uD83D\uDD14]"+ "Thông tin tài khoản không chính xác.");
         } else {
             String role = checkRole(person);
             switch (role) {
@@ -29,7 +29,7 @@ public class LogIn {
                     if (seller.isStatus()) {
                         SellerMenu.run(seller);
                     } else {
-                        System.err.println("Tài khoản chưa được phê duyệt thành công");
+                        System.err.println("[\uD83D\uDD14]"+ "Tài khoản chưa được phê duyệt thành công");
                     }
                     break;
                 case ADMIN:
@@ -56,9 +56,9 @@ public class LogIn {
     }
 
     public static Account inputAccount() {
-        System.out.println("Nhập tên tài khoản");
+        System.out.println(".>Nhập tên tài khoản");
         String name = scanner.nextLine();
-        System.out.println("Nhập mật khẩu");
+        System.out.println(".>Nhập mật khẩu");
         String password = scanner.nextLine();
         return new Account(name, password);
     }

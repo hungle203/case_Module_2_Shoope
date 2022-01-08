@@ -37,6 +37,5 @@ public class Constant {
     public static final String WASHING_DRYER_MACHINE = "washing machine, dryer";
 
     public static final String KITCHEN_TOOLS = "kitchen tools";
-;
 
 }

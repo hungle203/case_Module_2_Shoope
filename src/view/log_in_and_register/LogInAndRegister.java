@@ -16,7 +16,7 @@ public class LogInAndRegister {
         products.read();
         int choose;
         do {
-            System.out.println("------------ỨNG DỤNG MUA SẮM------------");
+            System.out.println("[------------ỨNG DỤNG MUA SẮM------------]");
             menu();
             choose = Error.inputMismatchError();
             Error.selectionInputError(choose, 1, 3);
@@ -38,9 +38,10 @@ public class LogInAndRegister {
     }
 
     public static void menu() {
-        System.out.println("1. Đăng nhập");
-        System.out.println("2. Đăng ký");
-        System.out.println("3. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[1. Đăng nhập                            ]");
+        System.out.println("[2. Đăng ký                              ]");
+        System.out.println("[3. Thoát                                ]");
+        System.out.println("[----------------------------------------]");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
     }
 }

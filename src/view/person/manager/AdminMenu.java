@@ -5,6 +5,8 @@ import model.person.Person;
 import model.person.Seller;
 import view.error.Error;
 
+import java.util.Objects;
+
 import static view.Constant.*;
 
 public class AdminMenu {
@@ -30,18 +32,18 @@ public class AdminMenu {
     }
 
     public static void removeSeller() {
-        System.out.println("Nhập tên người bán hàng");
+        System.out.println(".>Nhập tên người bán hàng");
         String name = scanner.nextLine();
         int index = people.searchPersonByName(name);
         if (index == -1) {
-            System.err.println("Không có người bán này");
+            System.err.println("[\uD83D\uDD14]"+ "Không có người bán này");
             System.out.println(END);
             return;
         }
         Person person = people.getPeople().get(index);
-        products.getProducts().removeIf(product -> product.getSeller().getAccount().equals(person.getAccount()));
+        products.getProducts().removeIf(product -> Objects.equals(product.getSeller().getAccount(), person.getAccount()));
         people.remove(index);
-        System.out.println("Đã xóa.");
+        System.out.println("[\uD83D\uDD14]"+ "Đã xóa.");
         System.out.println(END);
     }
 
@@ -57,16 +59,16 @@ public class AdminMenu {
             }
         }
         if (count == 0) {
-            System.out.println("Không có người bán hàng nào đăng ký.");
+            System.out.println("[\uD83D\uDD14]"+ "Không có người bán hàng nào đăng ký.");
         }
     }
 
     public static void addSeller() {
-        System.out.println("Nhập tên người đăng ký bán hàng");
+        System.out.println(".>Nhập tên người đăng ký bán hàng");
         String name = scanner.nextLine();
         int index = people.searchPersonByName(name);
         if (index == -1) {
-            System.err.println("Không có người bán này");
+            System.err.println("[\uD83D\uDD14]"+ "Không có người bán này");
             System.out.println(END);
             return;
         }
@@ -75,25 +77,24 @@ public class AdminMenu {
             Seller seller = (Seller) people.getPeople().get(index);
             if (!seller.isStatus()) {
                 seller.setStatus(true);
-                System.out.println("Đã thêm người bán hàng " + seller.getAccount().getName());
+                System.out.println("[\uD83D\uDD14]"+ "Đã thêm người bán hàng " + seller.getAccount().getName());
                 System.out.println(END);
                 return;
             } else {
-                System.err.println("Người bán hàng này đã đăng ký");
+                System.err.println("[\uD83D\uDD14]"+ "Người bán hàng này đã đăng ký");
                 System.out.println(END);
             }
         }
-        System.out.println("Đây là người dùng không phải người bán hàng");
         System.out.println(END);
     }
 
     public static void menuAdmin() {
-        System.out.println("------------Quản trị viên----------");
-        System.out.println("1. Hiển thị người đăng ký bán hàng trên hệ thống");
-        System.out.println("2. Thêm người bán hàng");
-        System.out.println("3. Xóa người bán hàng");
-        System.out.println("6. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[------------Quản trị viên----------------------]");
+        System.out.println("1. Hiển thị người đăng ký bán hàng trên hệ thống]");
+        System.out.println("2. Thêm người bán hàng                          ]");
+        System.out.println("3. Xóa người bán hàng                           ]");
+        System.out.println("6. Thoát                                        ]");
+        System.out.println("[-----------------------------------------------]");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
     }
-
 }

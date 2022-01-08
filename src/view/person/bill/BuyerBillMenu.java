@@ -50,10 +50,10 @@ public class BuyerBillMenu {
         System.out.println("0. Xem tiếp");
         int count = 1;
         for (Bill bill : bills) {
-            System.out.println(count + ". " + bill);
+            System.out.println("[\uD83D\uDC49]"+ count + ". " + bill);
             count++;
         }
-        System.out.println("Nhập lựa chọn hóa đơn");
+        System.out.println("[\uD83D\uDCDD]"+ "Nhập lựa chọn hóa đơn");
     }
 
     // chưa thanh toán
@@ -69,7 +69,7 @@ public class BuyerBillMenu {
         Iterator<Bill> billIterator = bills.iterator();
         ArrayList<Bill> bill1 = get5Bill(count, billIterator);
         if (bill1.size() == 0) {
-            System.out.println("Không có hóa đơn nào.");
+            System.out.println("[\uD83D\uDD14]"+ "[Không có hóa đơn nào]");
         } else {
             int choose;
             menuShow5Bill(bill1);
@@ -85,7 +85,7 @@ public class BuyerBillMenu {
                     case 0:
                         bill1 = get5Bill(count, billIterator);
                         if (bill1.size() == 0) {
-                            System.out.println("Không còn hóa đơn nào.");
+                            System.out.println("[\uD83D\uDD14]"+ "[Không còn hóa đơn nào]");
                             return;
                         }
                         menuShow5Bill(bill1);
@@ -134,7 +134,7 @@ public class BuyerBillMenu {
         Iterator<Bill> billIterator = bills.iterator();
         ArrayList<Bill> bill1 = get5Bill(count, billIterator);
         if (bill1.size() == 0) {
-            System.out.println("Không có hóa đơn nào.");
+            System.out.println("[\uD83D\uDD14]"+ "[Không có hóa đơn nào]");
         } else {
             int choose;
             menuShow5Bill(bill1);
@@ -150,7 +150,7 @@ public class BuyerBillMenu {
                     case 0:
                         bill1 = get5Bill(count, billIterator);
                         if (bill1.size() == 0) {
-                            System.out.println("Không còn hóa đơn nào.");
+                            System.out.println("[\uD83D\uDD14]"+ "[Không còn hóa đơn nào]");
                             return;
                         }
                         menuShow5Bill(bill1);
@@ -203,23 +203,23 @@ public class BuyerBillMenu {
                     System.out.println("Đánh giá sản phẩm");
                     String comment = scanner.nextLine();
                     product.getComments().add(comment);
-                    System.out.println("Đã thanh toán");
+                    System.out.println("[\uD83D\uDD14]"+ "Đã thanh toán");
                     return;
             }
         } while (choose != 2);
     }
 
     public static void payMenu() {
-        System.out.println("1. Thanh toán");
-        System.out.println("2. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[1. Thanh toán]");
+        System.out.println("[2. Thoát     ]");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
     }
 
     public static void menu() {
-        System.out.println("1. Hiển thị hóa đơn chưa thanh toán");
-        System.out.println("2. Hiển thị hóa đơn đã thanh toán");
-        System.out.println("3. Thoát");
-        System.out.println("Nhập lựa chọn");
+        System.out.println("[1. Hiển thị hóa đơn chưa thanh toán]");
+        System.out.println("[2. Hiển thị hóa đơn đã thanh toán  ]");
+        System.out.println("[3. Thoát                           ]");
+        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
     }
 
 }
