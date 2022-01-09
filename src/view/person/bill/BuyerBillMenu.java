@@ -47,12 +47,13 @@ public class BuyerBillMenu {
 
     public static void menuShow5Bill(ArrayList<Bill> bills) {
         System.out.println("-----------Hóa đơn của bạn-----------");
-        System.out.println("0. Xem tiếp");
+
         int count = 1;
         for (Bill bill : bills) {
             System.out.println("[\uD83D\uDC49]"+ count + ". " + bill);
             count++;
         }
+        System.out.println(".>0. Xem tiếp");
         System.out.println("[\uD83D\uDCDD]"+ "Nhập lựa chọn hóa đơn");
     }
 
