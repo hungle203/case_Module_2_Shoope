@@ -102,6 +102,7 @@ public class BillOrderMenu {
     public static void menuShow5Product(ArrayList<Product> products1) {
         System.out.println("[-----------Sản phẩm-----------]");
         System.out.println("[0. Xem tiếp                   ]");
+        System.out.println("[------------------------------]");
         int count = 1;
         for (Product product : products1) {
             System.out.println("👉" + count + ". " + product);

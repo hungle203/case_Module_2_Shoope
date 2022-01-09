@@ -42,6 +42,6 @@ public class LogInAndRegister {
         System.out.println("[2. Đăng ký                              ]");
         System.out.println("[3. Thoát                                ]");
         System.out.println("[----------------------------------------]");
-        System.out.println("[\uD83D\uDCDD]"+ ".>Nhập lựa chọn");
+        System.out.println("[\uD83D\uDCDD]" + ".>Nhập lựa chọn");
     }
 }

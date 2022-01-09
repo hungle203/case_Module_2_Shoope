@@ -57,7 +57,7 @@ public class BuyerBillMenu {
         System.out.println("[\uD83D\uDCDD]"+ "Nhập lựa chọn hóa đơn");
     }
 
-    // chưa thanh toán
+    // Đã thanh toán
 
     public static void paidMenu(Buyer buyer) {
         ArrayList<Bill> bills = new ArrayList<>();
@@ -122,7 +122,7 @@ public class BuyerBillMenu {
 
     }
 
-    // đã thanh toán
+    // chưa thanh toán
 
     public static void unpaidMenu(Buyer buyer) {
         ArrayList<Bill> bills = new ArrayList<>();
